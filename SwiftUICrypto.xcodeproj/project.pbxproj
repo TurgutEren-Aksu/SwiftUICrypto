@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B144BA2A2BD1548E00968D3A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144BA292BD1548E00968D3A /* HomeView.swift */; };
 		B16268C62BCCA94900B7B269 /* SwiftUICryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16268C52BCCA94900B7B269 /* SwiftUICryptoApp.swift */; };
 		B16268C82BCCA94900B7B269 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16268C72BCCA94900B7B269 /* ContentView.swift */; };
 		B16268CA2BCCA94E00B7B269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16268C92BCCA94E00B7B269 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B144BA292BD1548E00968D3A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B16268C22BCCA94900B7B269 /* SwiftUICrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16268C52BCCA94900B7B269 /* SwiftUICryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICryptoApp.swift; sourceTree = "<group>"; };
 		B16268C72BCCA94900B7B269 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B144BA242BD1543700968D3A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B144BA262BD1545D00968D3A /* Views */,
+				B144BA252BD1545000968D3A /* ViewModels */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B144BA252BD1545000968D3A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B144BA262BD1545D00968D3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B144BA292BD1548E00968D3A /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B16268B92BCCA94900B7B269 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +83,7 @@
 			children = (
 				B16268C52BCCA94900B7B269 /* SwiftUICryptoApp.swift */,
 				B18A9FC32BCFC18200F0F562 /* Extensions */,
+				B144BA242BD1543700968D3A /* Core */,
 				B16268C72BCCA94900B7B269 /* ContentView.swift */,
 				B16268C92BCCA94E00B7B269 /* Assets.xcassets */,
 				B16268D32BCEAE1900B7B269 /* Assets.xcassets */,
@@ -153,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B16268C82BCCA94900B7B269 /* ContentView.swift in Sources */,
+				B144BA2A2BD1548E00968D3A /* HomeView.swift in Sources */,
 				B16268C62BCCA94900B7B269 /* SwiftUICryptoApp.swift in Sources */,
 				B18A9FC52BCFC19700F0F562 /* Color.swift in Sources */,
 			);
