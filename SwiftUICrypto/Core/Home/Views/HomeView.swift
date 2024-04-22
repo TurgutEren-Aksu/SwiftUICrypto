@@ -12,6 +12,10 @@ struct HomeView: View {
 		ZStack{
 			Color.theme.background.ignoresSafeArea()
 			VStack{
+				HStack{
+					CircleButtonView(iconName: "info")
+					CircleButtonView(iconName: "chevron.right")
+				}
 				Text("Header")
 				Spacer(minLength: 0)
 			}
