@@ -14,9 +14,15 @@ struct HomeView: View {
 			VStack{
 				HStack{
 					CircleButtonView(iconName: "info")
+					Spacer()
+					Text("Live Prices")
+						.font(.headline)
+						.fontWeight(.heavy)
+						.foregroundStyle(Color.theme.accent)
+					Spacer()
 					CircleButtonView(iconName: "chevron.right")
 				}
-				Text("Header")
+				.padding(.horizontal)
 				Spacer(minLength: 0)
 			}
 		}
