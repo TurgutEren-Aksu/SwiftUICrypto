@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+	
+	@State private var showPortfolio: Bool = false
+	
     var body: some View {
 		ZStack{
 			Color.theme.background.ignoresSafeArea()
@@ -21,6 +24,12 @@ struct HomeView: View {
 						.foregroundStyle(Color.theme.accent)
 					Spacer()
 					CircleButtonView(iconName: "chevron.right")
+						.rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
+						.onTapGesture {
+							withAnimation(.spring()) {
+								showPortfolio.toggle()
+							}
+						}
 				}
 				.padding(.horizontal)
 				Spacer(minLength: 0)
