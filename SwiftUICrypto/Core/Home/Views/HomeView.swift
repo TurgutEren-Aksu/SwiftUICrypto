@@ -18,7 +18,7 @@ struct HomeView: View {
 				HStack{
 					CircleButtonView(iconName: "info")
 					Spacer()
-					Text("Live Prices")
+					Text(showPortfolio ? "Portfolio" : "Live Prices")
 						.font(.headline)
 						.fontWeight(.heavy)
 						.foregroundStyle(Color.theme.accent)
