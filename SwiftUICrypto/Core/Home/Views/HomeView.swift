@@ -23,6 +23,7 @@ struct HomeView: View {
 						.font(.headline)
 						.fontWeight(.heavy)
 						.foregroundStyle(Color.theme.accent)
+						.animation(.none)
 					Spacer()
 					CircleButtonView(iconName: "chevron.right")
 						.rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
