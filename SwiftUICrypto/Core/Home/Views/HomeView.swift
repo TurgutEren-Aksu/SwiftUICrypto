@@ -16,7 +16,8 @@ struct HomeView: View {
 			Color.theme.background.ignoresSafeArea()
 			VStack{
 				HStack{
-					CircleButtonView(iconName: "info")
+					CircleButtonView(iconName: showPortfolio ? "plus" : "info")
+						.animation(.none)
 					Spacer()
 					Text(showPortfolio ? "Portfolio" : "Live Prices")
 						.font(.headline)
