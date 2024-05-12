@@ -61,6 +61,10 @@ struct CoinModel: Identifiable,Codable {
 	return (currentHoldings ?? 0) * currentPrice
 	}
 	
+	var rank: Int {
+		return Int(marketCapRank ?? 0)
+	}
+	
 }
 struct SparklineIn7D:Codable {
 	let price: [Double]?
