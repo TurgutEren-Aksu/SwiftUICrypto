@@ -7,15 +7,23 @@
 
 import SwiftUI
 
+
 struct CoinRowView: View {
 	
 	let coin: CoinModel
 	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		HStack(spacing: 0){
+			Text("\(coin.rank)")
+				.font(.caption)
+				.foregroundStyle(Color.theme.secondaryText)
+				.frame(minWidth: 30)
+		}
     }
 }
-
 #Preview {
-	CoinRowView(coin: <#CoinModel#>)
+	CoinRowView(coin: DeveloperProvider.instance.coin)
 }
+
+
+
