@@ -18,6 +18,24 @@ struct CoinRowView: View {
 				.font(.caption)
 				.foregroundStyle(Color.theme.secondaryText)
 				.frame(minWidth: 30)
+			Circle()
+				.frame(width: 30, height: 30)
+			Text(coin.symbol.uppercased())
+				.font(.headline)
+				.padding(.leading, 6)
+				.foregroundStyle(Color.theme.accent)
+			Spacer()
+			VStack(alignment: .trailing){
+				Text("\(coin.currentPrice)")
+					.bold()
+					.foregroundStyle(Color.theme.accent)
+				Text("\(coin.priceChangePercentage24H ?? 0)%")
+					.foregroundStyle(
+						(coin.priceChangePercentage24H ?? 0) >= 0 ? Color.theme.green : Color.theme.red
+					)
+				
+				
+			}
 		}
     }
 }
