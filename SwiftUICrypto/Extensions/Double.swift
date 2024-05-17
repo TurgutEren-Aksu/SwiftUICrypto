@@ -11,6 +11,9 @@ extension Double {
 	private var currencyFormatter: NumberFormatter {
 		let formatter = NumberFormatter()
 		formatter.usesGroupingSeparator = true
+		formatter.numberStyle = .currency
+		formatter.minimumFractionDigits = 2
+		formatter.maximumFractionDigits = 6
 		return formatter
 	}
 }
