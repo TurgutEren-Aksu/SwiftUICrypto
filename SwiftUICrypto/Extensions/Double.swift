@@ -16,4 +16,9 @@ extension Double {
 		formatter.maximumFractionDigits = 6
 		return formatter
 	}
+	
+	func asCurrencyWith6Decimals() ->String {
+		let number = NSNumber(value: self)
+		return currencyFormatter.string(from: number) ?? "$0.00"
+	}
 }
