@@ -21,4 +21,7 @@ extension Double {
 		let number = NSNumber(value: self)
 		return currencyFormatter.string(from: number) ?? "$0.00"
 	}
+	func asNumberString()->String{
+		return String(format: "%.2f",self)
+	}
 }
