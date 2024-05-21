@@ -23,5 +23,7 @@ extension Double {
 	}
 	func asNumberString()->String{
 		return String(format: "%.2f",self)
+	func asPercentString()->String{
+		return asNumberString() + "%"
 	}
 }
