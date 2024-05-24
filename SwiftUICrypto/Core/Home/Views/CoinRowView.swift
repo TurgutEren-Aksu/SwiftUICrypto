@@ -12,8 +12,31 @@ struct CoinRowView: View {
 	
 	let coin: CoinModel
 	let showHoldingsColumns: Bool
-    var body: some View {
+	var body: some View {
 		HStack(spacing: 0){
+			leftColumn
+			Spacer()
+			if showHoldingsColumns{
+				centerColumns
+			}
+			rightColumns
+		}
+		.font(.subheadline)
+	}
+}
+#Preview {
+	Group{
+		CoinRowView(coin: DeveloperProvider.instance.coin, showHoldingsColumns: true)
+			.previewLayout(.sizeThatFits)
+		CoinRowView(coin: DeveloperProvider.instance.coin, showHoldingsColumns: true)
+			.previewLayout(.sizeThatFits)
+			.preferredColorScheme(.dark)
+	}
+	
+}
+extension CoinRowView{
+	private var leftColumn: some View{
+		HStack(spacing:0){
 			Text("\(coin.rank)")
 				.font(.caption)
 				.foregroundStyle(Color.theme.secondaryText)
@@ -24,34 +47,30 @@ struct CoinRowView: View {
 				.font(.headline)
 				.padding(.leading, 6)
 				.foregroundStyle(Color.theme.accent)
-			Spacer()
-			
-			if showHoldingsColumns{
-				VStack(alignment: .trailing){
-					Text(coin.currentHoldingsValue.asCurrencyWith6Decimals())
-						.bold()
-					Text((coin.currentHoldings ?? 0).asNumberString())
-					
-				}
-				.foregroundStyle(Color.theme.accent)
-			}
-			
-			VStack(alignment: .trailing){
-				Text("\(coin.currentPrice.asCurrencyWith6Decimals())")
-					.bold()
-					.foregroundStyle(Color.theme.accent)
-				Text(coin.priceChangePercentage24H?.asPercentString() ?? " ")
-					.foregroundStyle(
-						(coin.priceChangePercentage24H ?? 0) >= 0 ? Color.theme.green : Color.theme.red
-					)
-			}
-			.frame(width: UIScreen.main.bounds.width / 3,alignment: .trailing)
 		}
-		.font(.subheadline)
-    }
-}
-#Preview {
-	CoinRowView(coin: DeveloperProvider.instance.coin, showHoldingsColumns: true)
+	}
+	private var centerColumns: some View{
+		VStack(alignment:.trailing){
+			Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
+				.bold()
+			Text((coin.currentHoldings ?? 0).asNumberString())
+			
+		}
+		.foregroundStyle(Color.theme.accent)
+	}
+	private var rightColumns: some View{
+		VStack(alignment:.trailing){
+			Text("\(coin.currentPrice.asCurrencyWith2Decimals())")
+				.bold()
+				.foregroundStyle(Color.theme.accent)
+			Text(coin.priceChangePercentage24H?.asPercentString() ?? " ")
+				.foregroundStyle(
+					(coin.priceChangePercentage24H ?? 0) >= 0 ? Color.theme.green : Color.theme.red
+				)
+		}
+		.frame(width: UIScreen.main.bounds.width / 3.5,alignment: .trailing)
+		
+	}
 }
 
 
