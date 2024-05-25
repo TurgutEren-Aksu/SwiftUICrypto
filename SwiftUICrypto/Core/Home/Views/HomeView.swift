@@ -18,6 +18,11 @@ struct HomeView: View {
 				 
 				homeHeader
 				
+				
+				List{
+					CoinRowView(coin: DeveloperProvider.instance.coin, showHoldingsColumns: false)
+				}
+				.listStyle(PlainListStyle())
 				Spacer(minLength: 0)
 			}
 		}
