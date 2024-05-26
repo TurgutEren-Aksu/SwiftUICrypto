@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B12119CC2BF60A1B00399E88 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12119CB2BF60A1B00399E88 /* Double.swift */; };
 		B12F89C62BD2EA7C0070852E /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12F89C52BD2EA7C0070852E /* CircleButtonView.swift */; };
+		B13FE0B82C03C8BF00E43FCC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13FE0B72C03C8BF00E43FCC /* HomeViewModel.swift */; };
 		B144BA2A2BD1548E00968D3A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144BA292BD1548E00968D3A /* HomeView.swift */; };
 		B157C91D2BDFFDC400C31E78 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B157C91C2BDFFDC400C31E78 /* CircleButtonAnimationView.swift */; };
 		B16268C62BCCA94900B7B269 /* SwiftUICryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16268C52BCCA94900B7B269 /* SwiftUICryptoApp.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		B12119CB2BF60A1B00399E88 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		B12F89C52BD2EA7C0070852E /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		B13FE0B72C03C8BF00E43FCC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B144BA292BD1548E00968D3A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B157C91C2BDFFDC400C31E78 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		B16268C22BCCA94900B7B269 /* SwiftUICrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B184BC0C2BE88D2B009F61A0 /* CoinModel.swift */,
+				B13FE0B72C03C8BF00E43FCC /* HomeViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B16551252BF1D0DB0093215F /* CoinRowView.swift in Sources */,
+				B13FE0B82C03C8BF00E43FCC /* HomeViewModel.swift in Sources */,
 				B16268C82BCCA94900B7B269 /* ContentView.swift in Sources */,
 				B144BA2A2BD1548E00968D3A /* HomeView.swift in Sources */,
 				B16268C62BCCA94900B7B269 /* SwiftUICryptoApp.swift in Sources */,
