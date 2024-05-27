@@ -90,6 +90,7 @@
 		B144BA252BD1545000968D3A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B13FE0B72C03C8BF00E43FCC /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -146,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				B184BC0C2BE88D2B009F61A0 /* CoinModel.swift */,
-				B13FE0B72C03C8BF00E43FCC /* HomeViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
