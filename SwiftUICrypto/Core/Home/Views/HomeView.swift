@@ -35,6 +35,7 @@ struct HomeView: View {
 		HomeView()
 			.navigationBarHidden(true)
 	}
+	.environmentObject(DeveloperProvider.instance.homeVM)
 }
 extension HomeView {
 	private var homeHeader: some View{
