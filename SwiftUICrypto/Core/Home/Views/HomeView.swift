@@ -21,7 +21,9 @@ struct HomeView: View {
 				
 				
 				List{
-					CoinRowView(coin: DeveloperProvider.instance.coin, showHoldingsColumns: false)
+					ForEach(vm.allCoins){ coin in
+					CoinRowView(coin: coin, showHoldingsColumns: false)
+					}
 				}
 				.listStyle(PlainListStyle())
 				Spacer(minLength: 0)
