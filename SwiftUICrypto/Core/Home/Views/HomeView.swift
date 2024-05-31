@@ -19,13 +19,15 @@ struct HomeView: View {
 				 
 				homeHeader
 				
-				
-				List{
-					ForEach(vm.allCoins){ coin in
-					CoinRowView(coin: coin, showHoldingsColumns: false)
+				if !showPortfolio{
+					List{
+						ForEach(vm.allCoins){ coin in
+						CoinRowView(coin: coin, showHoldingsColumns: false)
+						}
 					}
+					.listStyle(PlainListStyle())
+					.transition(.move(edge: .leading))
 				}
-				.listStyle(PlainListStyle())
 				Spacer(minLength: 0)
 			}
 		}
