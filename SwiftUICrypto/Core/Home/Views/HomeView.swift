@@ -18,7 +18,15 @@ struct HomeView: View {
 			VStack{
 				 
 				homeHeader
-				
+				HStack{
+					Text("Coin")
+					Spacer()
+					Text("Holdings")
+					Text("Price")
+				}
+				.font(.caption)
+				.foregroundStyle(Color.theme.secondaryText)
+				.padding(.horizontal)
 				if !showPortfolio{
 					allCoinList
 					.transition(.move(edge: .leading))
