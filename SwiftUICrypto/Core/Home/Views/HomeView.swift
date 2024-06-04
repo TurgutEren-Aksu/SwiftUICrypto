@@ -21,8 +21,12 @@ struct HomeView: View {
 				HStack{
 					Text("Coin")
 					Spacer()
-					Text("Holdings")
+					
+					if showPortfolio{
+						Text("Holdings")
+					}
 					Text("Price")
+						.frame(width: UIScreen.main.bounds.width/3.5, alignment: .trailing)
 				}
 				.font(.caption)
 				.foregroundStyle(Color.theme.secondaryText)
