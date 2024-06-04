@@ -18,19 +18,9 @@ struct HomeView: View {
 			VStack{
 				 
 				homeHeader
-				HStack{
-					Text("Coin")
-					Spacer()
-					
-					if showPortfolio{
-						Text("Holdings")
-					}
-					Text("Price")
-						.frame(width: UIScreen.main.bounds.width/3.5, alignment: .trailing)
-				}
-				.font(.caption)
-				.foregroundStyle(Color.theme.secondaryText)
-				.padding(.horizontal)
+				
+				columnTitles
+				
 				if !showPortfolio{
 					allCoinList
 					.transition(.move(edge: .leading))
@@ -94,5 +84,20 @@ extension HomeView {
 			}
 		}
 		.listStyle(PlainListStyle())
+	}
+	private var columnTitles: some View{
+		HStack{
+			Text("Coin")
+			Spacer()
+			
+			if showPortfolio{
+				Text("Holdings")
+			}
+			Text("Price")
+				.frame(width: UIScreen.main.bounds.width/3.5, alignment: .trailing)
+		}
+		.font(.caption)
+		.foregroundStyle(Color.theme.secondaryText)
+		.padding(.horizontal)
 	}
 }
