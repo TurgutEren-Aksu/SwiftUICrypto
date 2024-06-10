@@ -24,6 +24,9 @@ class CoinDataService {
 				}
 				return output.data
 			}
+			.receive(on: DispatchQueue.main)
+			.decode(type: [CoinModel].self, decoder: JSONDecoder())
+			
 	}
 	
 }
