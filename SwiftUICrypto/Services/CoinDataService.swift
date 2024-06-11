@@ -26,7 +26,20 @@ class CoinDataService {
 			}
 			.receive(on: DispatchQueue.main)
 			.decode(type: [CoinModel].self, decoder: JSONDecoder())
-			
+			.sink{ (completion) in
+				
+				switch completion {
+					case .finished:
+						break
+					case .failure(let error):
+						print(error.localizedDescription)
+				}
+				
+			} receiveValue: { (returnCoins) in
+				self.allCoins = returnCoins
+				
+			}
+		
 	}
 	
 }
