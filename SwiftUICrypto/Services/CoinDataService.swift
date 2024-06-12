@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 class CoinDataService {
 	@Published var allCoins: [CoinModel] = []
+	var cancellables = Set<AnyCancellable>()
 	
 	init() {
 		getCoins()
@@ -35,11 +37,11 @@ class CoinDataService {
 						print(error.localizedDescription)
 				}
 				
-			} receiveValue: { (returnCoins) in
-				self.allCoins = returnCoins
+			} receiveValue: { [weak self ](returnCoins) in
+				self?.allCoins = returnCoins
 				
 			}
-		
+			.store(in: &cancellables)
 	}
 	
 }
