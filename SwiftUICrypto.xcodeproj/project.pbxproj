@@ -22,6 +22,7 @@
 		B16551292BF1D1F10093215F /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16551282BF1D1F10093215F /* PreviewProvider.swift */; };
 		B184BC0D2BE88D2B009F61A0 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184BC0C2BE88D2B009F61A0 /* CoinModel.swift */; };
 		B18A9FC52BCFC19700F0F562 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A9FC42BCFC19700F0F562 /* Color.swift */; };
+		B1E03F6D2C1DFCCC00836682 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E03F6C2C1DFCCC00836682 /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B16551282BF1D1F10093215F /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		B184BC0C2BE88D2B009F61A0 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		B18A9FC42BCFC19700F0F562 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B1E03F6C2C1DFCCC00836682 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		B16268C42BCCA94900B7B269 /* SwiftUICrypto */ = {
 			isa = PBXGroup;
 			children = (
+				B1E03F692C1DFC5400836682 /* Utilities */,
 				B16268C52BCCA94900B7B269 /* SwiftUICryptoApp.swift */,
 				B18A9FC32BCFC18200F0F562 /* Extensions */,
 				B103C7C22C11314800D9441E /* Services */,
@@ -170,6 +173,14 @@
 				B12119CB2BF60A1B00399E88 /* Double.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B1E03F692C1DFC5400836682 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B1E03F6C2C1DFCCC00836682 /* NetworkingManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				B16268C62BCCA94900B7B269 /* SwiftUICryptoApp.swift in Sources */,
 				B12F89C62BD2EA7C0070852E /* CircleButtonView.swift in Sources */,
 				B18A9FC52BCFC19700F0F562 /* Color.swift in Sources */,
+				B1E03F6D2C1DFCCC00836682 /* NetworkingManager.swift in Sources */,
 				B157C91D2BDFFDC400C31E78 /* CircleButtonAnimationView.swift in Sources */,
 				B16551292BF1D1F10093215F /* PreviewProvider.swift in Sources */,
 				B12119CC2BF60A1B00399E88 /* Double.swift in Sources */,
