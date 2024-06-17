@@ -10,7 +10,7 @@ import Combine
 
 
 class NetworkingManager {
-	static func download(url: URL) -> Publishers.ReceiveOn<Publishers.TryMap<Publishers.SubscribeOn<URLSession.DataTaskPublisher, DispatchQueue>, Data>, DispatchQueue>{
+	static func download(url: URL) -> AnyPublisher<Data	, Error>{
 		
 	return URLSession.shared.dataTaskPublisher(for: url)
 			.subscribe(on: DispatchQueue.global(qos: .default))
@@ -21,5 +21,6 @@ class NetworkingManager {
 				return output.data
 			}
 			.receive(on: DispatchQueue.main)
+			.eraseToAnyPublisher()
 	}
 }
