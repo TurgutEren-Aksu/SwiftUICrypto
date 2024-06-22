@@ -10,6 +10,19 @@ import Combine
 
 
 class NetworkingManager {
+	
+	enum NetworkingError:LocalizedError {
+		case badURLResponse
+		case unknow
+		
+		var errorDescription: String?{
+			switch self {
+				case .badURLResponse: return "Bad response from URL"
+				case .unknow: return "Unknow error occured"
+			}
+		}
+	}
+	
 	static func download(url: URL) -> AnyPublisher<Data	, Error>{
 		
 	return URLSession.shared.dataTaskPublisher(for: url)
