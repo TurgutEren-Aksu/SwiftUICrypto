@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,20 @@
 		B1E03F6C2C1DFCCC00836682 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B11D3C562C2C88300068D318 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CoinImage.swift,
+			);
+			target = B16268C12BCCA94900B7B269 /* SwiftUICrypto */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B11D3C522C2C87F40068D318 /* CoinImage */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (B11D3C562C2C88300068D318 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = CoinImage; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		B16268BF2BCCA94900B7B269 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -67,6 +81,7 @@
 		B12F89C22BD2EA050070852E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B11D3C522C2C87F40068D318 /* CoinImage */,
 				B12F89C42BD2EA610070852E /* CircleButton */,
 			);
 			path = Components;
