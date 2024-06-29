@@ -49,7 +49,7 @@
 		B11D3C562C2C88300068D318 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				CoinImage.swift,
+				CoinImageView.swift,
 			);
 			target = B16268C12BCCA94900B7B269 /* SwiftUICrypto */;
 		};

@@ -1,8 +1,8 @@
 //
-//  CoinImage.swift
+//  CoinImageView.swift
 //  SwiftUICrypto
 //
-//  Created by Turgut Eren Aksu on 26.06.2024.
+//  Created by Turgut Eren Aksu on 29.06.2024.
 //
 
 import SwiftUI
@@ -12,7 +12,7 @@ class CoinImageViewModel: ObservableObject {
 	@Published var isLoading: Bool = false
 	
 	init(){
-		
+		getImage()
 	}
 	private func getImage(){
 		
@@ -21,11 +21,11 @@ class CoinImageViewModel: ObservableObject {
 }
 
 
-struct CoinImage: View {
+struct CoinImageView: View {
 	
 	@StateObject var vm: CoinImageViewModel = CoinImageViewModel()
 	
-    var body: some View {
+	var body: some View {
 		ZStack{
 			if let image = vm.image{
 				Image(uiImage: image)
@@ -34,14 +34,16 @@ struct CoinImage: View {
 			} else if vm.isLoading{
 				ProgressView()
 			}else{
-				Image(systemName: "quesitonmark")
+				Image(systemName: "questionmark")
 					.foregroundStyle(Color.theme.secondaryText)
 				
 			}
 		}
-    }
+	}
 }
 
 #Preview {
-    CoinImage()
+	CoinImageView()
+		.padding()
+		.previewLayout(.sizeThatFits)
 }
