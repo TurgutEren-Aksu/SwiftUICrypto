@@ -10,13 +10,13 @@ import Combine
 
 class NetworkingManager{
 
-    enum NetworkingManager{
-        case badURLResponse
+    enum NetworkingManager: LocalizedError{
+        case badURLResponse(url:URL)
         case unknow
         
         var errorDescription: String? {
             switch self {
-            case .badURLResponse: return "Bad reponse from url"
+            case .badURLResponse(url:let url): return "Bad reponse from \(url)"
             case .unknow: return "Unkow error occured"
             }
         }
@@ -26,14 +26,15 @@ class NetworkingManager{
     static func download(url:URL) -> AnyPublisher<Data,Error>{
        return URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global(qos: .default))
-            .tryMap({ try handleURLResponse(output: $0)})
+            .tryMap({ try handleURLResponse(output: $0,url: url)})
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     
-    static func handleURLResponse(output: URLSession.DataTaskPublisher.Output) throws -> Data{
+    static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url:URL) throws -> Data{
+        
         guard let response = output.response as? HTTPURLResponse,response.statusCode >= 200 && response.statusCode < 300 else {
-            throw URLError(.badServerResponse)
+            throw NetworkingManager.badURLResponse(url: url)
         }
         return output.data
     }
