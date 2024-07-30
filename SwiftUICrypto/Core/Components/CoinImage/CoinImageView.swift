@@ -44,4 +44,6 @@ struct CoinImageView: View {
 
 #Preview {
     CoinImageView()
+        .padding()
+        .previewLayout(.sizeThatFits)
 }
