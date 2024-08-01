@@ -22,11 +22,13 @@ class CoinImageService{
     func getCoinImage(urlString: String){
         guard let url = URL(string: urlString ) else{return}
         imageSubscription = NetworkingManager.download(url: url)
-        //trymap
-            .decode(type: [CoinModel].self, decoder: JSONDecoder())
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnCoins) in
-                self?.allCoins = returnCoins
-                self?.coinSubscription?.cancel()
+            .tryMap({ (data) -> UIImage?  in
+                return UIImage(data: data)
+            })
+//            .decode(type: [CoinModel].self, decoder: JSONDecoder())
+            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedCoins) in
+                self?.image = returnedCoins
+                self?.imageSubscription?.cancel()
             })
 
     }
