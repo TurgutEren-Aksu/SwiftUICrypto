@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91284E882C668B6E0023B8A3 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91284E872C668B6E0023B8A3 /* LocalFileManager.swift */; };
 		915061BD2C51FE2F0000334B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915061BC2C51FE2F0000334B /* NetworkingManager.swift */; };
 		9165F1472C4F0AE200234127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9165F1462C4F0AE200234127 /* Assets.xcassets */; };
 		91BE899D2C5924FB00845144 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE899C2C5924FB00845144 /* CoinImageView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91284E872C668B6E0023B8A3 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		915061BC2C51FE2F0000334B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		9165F1462C4F0AE200234127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/Resources 2/Assets.xcassets"; sourceTree = "<group>"; };
 		91BE899C2C5924FB00845144 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				915061BC2C51FE2F0000334B /* NetworkingManager.swift */,
+				91284E872C668B6E0023B8A3 /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				B16551252BF1D0DB0093215F /* CoinRowView.swift in Sources */,
 				B13FE0B82C03C8BF00E43FCC /* HomeViewModel.swift in Sources */,
 				B16268C82BCCA94900B7B269 /* ContentView.swift in Sources */,
+				91284E882C668B6E0023B8A3 /* LocalFileManager.swift in Sources */,
 				B144BA2A2BD1548E00968D3A /* HomeView.swift in Sources */,
 				91BE899D2C5924FB00845144 /* CoinImageView.swift in Sources */,
 				B16268C62BCCA94900B7B269 /* SwiftUICryptoApp.swift in Sources */,
