@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 class LocalFileManager{
     
     static let instance = LocalFileManager()
+    private init(){ }
     
+    func saveImage(image: UIImage){
+        
+    }
 }
