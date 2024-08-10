@@ -14,6 +14,8 @@ class LocalFileManager{
     private init(){ }
     
     func saveImage(image: UIImage){
+     
+        let data  = image.pngData()
         
     }
 }
