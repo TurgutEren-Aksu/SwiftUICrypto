@@ -26,4 +26,7 @@ class LocalFileManager{
         }
         
     }
+    private func getURLForFolder(name: String) -> URL? {
+         
+    }
 }
