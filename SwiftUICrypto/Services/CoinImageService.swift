@@ -17,12 +17,23 @@ class CoinImageService{
     
     private let coin: CoinModel
     
+    private let fileManager = LocalFileManager.instance
+    
+    private let folderName = "coin_images"
     init(coin: CoinModel){
         self.coin = coin
         getCoinImage()
     }
     
     func getCoinImage(){
+        if let savedImage = fileManager.getImage(imageName: coin.id, folderName: folderName){
+            image = savedImage
+        }else{
+            downloadCoinImage()
+        }
+    }
+    
+    func downloadCoinImage(){
         guard let url = URL(string: coin.image ) else{return}
         imageSubscription = NetworkingManager.download(url: url)
             .tryMap({ (data) -> UIImage?  in
