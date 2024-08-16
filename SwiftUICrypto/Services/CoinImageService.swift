@@ -20,13 +20,15 @@ class CoinImageService{
     private let fileManager = LocalFileManager.instance
     
     private let folderName = "coin_images"
+    
+    private let imageName: String
     init(coin: CoinModel){
         self.coin = coin
-        getCoinImage()
+        self.imageName = coin.id
     }
     
     func getCoinImage(){
-        if let savedImage = fileManager.getImage(imageName: coin.id, folderName: folderName){
+        if let savedImage = fileManager.getImage(imageName: imageName, folderName: folderName){
             image = savedImage
         }else{
             downloadCoinImage()
@@ -39,10 +41,12 @@ class CoinImageService{
             .tryMap({ (data) -> UIImage?  in
                 return UIImage(data: data)
             })
-//            .decode(type: [CoinModel].self, decoder: JSONDecoder())
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedCoins) in
-                self?.image = returnedCoins
-                self?.imageSubscription?.cancel()
+            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedImages) in
+                guard let self = self, let downloadedImage = returnedImages else { return }
+                
+                self.image = downloadedImage
+                self.imageSubscription?.cancel()
+                self.fileManager.saveImage(image: downloadedImage, imageName: imageName, folderName: folderName)
             })
 
     }
