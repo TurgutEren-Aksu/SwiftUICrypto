@@ -25,6 +25,7 @@ class CoinImageService{
     init(coin: CoinModel){
         self.coin = coin
         self.imageName = coin.id
+        getCoinImage()
     }
     
     func getCoinImage(){
@@ -46,7 +47,7 @@ class CoinImageService{
                 
                 self.image = downloadedImage
                 self.imageSubscription?.cancel()
-                self.fileManager.saveImage(image: downloadedImage, imageName: imageName, folderName: folderName)
+                self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, folderName: self.folderName)
             })
 
     }
