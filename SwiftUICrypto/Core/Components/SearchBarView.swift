@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    @State var searchText: String = ""
     var body: some View {
-        Text("Hello, World!")
+        HStack{
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(
+                    searchText.isEmpty ? Color.theme.secondaryText : Color.theme.accent
+                )
+            
+            TextField("Search", text: $searchText)
+                .foregroundColor(Color.theme.accent)
+        }
+        .font(.headline)
+        .padding()
+        .background(
+        RoundedRectangle(cornerRadius: 25.0)
+            .fill(Color.theme.background)
+            .shadow(color: Color.theme.accent.opacity(0.15), radius:10, x: 0,y: 0)
+        
+        )
     }
 }
 
