@@ -18,8 +18,9 @@ struct SearchBarView: View {
             
             TextField("Search", text: $searchText)
                 .foregroundColor(Color.theme.accent)
+                .autocorrectionDisabled(true)
                 .overlay(
-                    Image(systemName: " .circle.fill")
+                    Image(systemName: "xmark.circle.fill")
                         .padding()
                         .offset(x:10)
                         .foregroundStyle(Color.theme.accent)
