@@ -40,5 +40,12 @@ struct StatisticView: View {
 }
 
 #Preview {
-    StatisticView(stat: DeveloperProvider.instance.state1)
+    Group {
+        StatisticView(stat: DeveloperProvider.instance.state1)
+            .previewLayout(.sizeThatFits)
+        StatisticView(stat: DeveloperProvider.instance.state2)
+            .previewLayout(.sizeThatFits)
+        StatisticView(stat: DeveloperProvider.instance.state3)
+            .previewLayout(.sizeThatFits)
+    }
 }
