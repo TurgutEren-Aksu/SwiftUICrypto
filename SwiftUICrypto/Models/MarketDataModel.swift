@@ -164,14 +164,25 @@ import Foundation
  }
  
  */
-struct Welcome{
-    let data: DataClass?
+struct GloabalData: Codable{
+    let data: MarketDataModel?
 }
 
-struct DataClass{
-    let activeCryptocurrencies, upcomingIcos,ongoingIcos,endedIcos: Int?
-    let markets: Int?
-    let totalMarketCap, totalVolume, marketCapPercantage:[String:Double]?
-    let marketCapChangePercentage24HUsd: Double?
-    let updatedAt: Int?
+struct MarketDataModel: Codable{
+    let totalMarketCap, totalVolume, marketCapPercantage:[String:Double]
+    let marketCapChangePercentage24HUsd: Double
+    
+    enum CodingKeys: String, CodingKey{
+        case totalMarketCap = "total_market_cap"
+        case totalVolume = "total_volume"
+        case marketCapPercentage = "market_cap_percentage"
+        case marketCapChangePercentage = "market_cap_change_percentage"
+    }
+    var marketCap: String{
+        if let item = totalMarketCap.first(where: { (key, value)->Bool in
+            return key == "usd"
+        }) {
+            return "\(item.value)"
+        }
+    }
 }
