@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		91284E882C668B6E0023B8A3 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91284E872C668B6E0023B8A3 /* LocalFileManager.swift */; };
 		915061BD2C51FE2F0000334B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915061BC2C51FE2F0000334B /* NetworkingManager.swift */; };
+		915366FA2C8BF10B00926177 /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915366F92C8BF10B00926177 /* MarketDataService.swift */; };
 		915888592C855AD100691969 /* MarketDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915888582C855AD100691969 /* MarketDataModel.swift */; };
 		916127202C816A2100765F6B /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161271F2C816A2100765F6B /* HomeStatsView.swift */; };
 		9165F1472C4F0AE200234127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9165F1462C4F0AE200234127 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		91284E872C668B6E0023B8A3 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		915061BC2C51FE2F0000334B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		915366F92C8BF10B00926177 /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
 		915888582C855AD100691969 /* MarketDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataModel.swift; sourceTree = "<group>"; };
 		9161271F2C816A2100765F6B /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
 		9165F1462C4F0AE200234127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/Resources 2/Assets.xcassets"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				B103C7C32C11317B00D9441E /* CoinDataService.swift */,
 				91BE899E2C59298200845144 /* CoinImageService.swift */,
+				915366F92C8BF10B00926177 /* MarketDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				91D59E3F2C71085E008B30F6 /* SearchBarView.swift in Sources */,
 				915061BD2C51FE2F0000334B /* NetworkingManager.swift in Sources */,
 				916127202C816A2100765F6B /* HomeStatsView.swift in Sources */,
+				915366FA2C8BF10B00926177 /* MarketDataService.swift in Sources */,
 				B157C91D2BDFFDC400C31E78 /* CircleButtonAnimationView.swift in Sources */,
 				91E4D4BB2C5E4FDD003405CA /* CoinImageViewModel.swift in Sources */,
 				B16551292BF1D1F10093215F /* PreviewProvider.swift in Sources */,
