@@ -8,21 +8,21 @@
 import Foundation
 import Combine
 class MarketDataService {
-    @Published var allCoins: [CoinModel] = []
-    var coinSubscription: AnyCancellable?
+    @Published var marketData: MarketDataModel? = nil
+    var marketDataSubscription: AnyCancellable?
     
     init() {
-        getCoins()
+        getData()
     }
     
-    private func getCoins(){
-        guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=250&page=1&sparkline=true&price_change_percentage=24h#") else{return}
+    private func getData(){
+        guard let url = URL(string: "https://api.coingecko.com/api/v3/global") else{return}
         
-        coinSubscription = NetworkingManager.download(url: url)
-            .decode(type: [CoinModel].self, decoder: JSONDecoder())
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnCoins) in
-                self?.allCoins = returnCoins
-                self?.coinSubscription?.cancel()
+        marketDataSubscription = NetworkingManager.download(url: url)
+            .decode(type: GloabalData.self, decoder: JSONDecoder())
+            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedGlobalData) in
+                self?.marketData = returnedGlobalData.data
+                self?.marketDataSubscription?.cancel()
             })
         
     }
