@@ -38,6 +38,26 @@ class HomeViewModel: ObservableObject{
                 self?.allCoins = returnedCoins
             }
             .store(in: &cancellables)
+        marketDataService.$marketData
+            .map{(marketDataModel) -> [StatisticModel] in
+                var stats: [StatisticModel] = []
+                guard let data = marketDataModel else {
+                    return stats
+                }
+                let marketCap = StatisticModel(title: "MarketCap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
+                stats.append(marketCap)
+                let volume = StatisticModel(title: "24H Volume", value: data.volume)
+                let btcDominance = StatisticModel(title: "BTC Dominance", value: data.btcDominance)
+                let portfolio = StatisticModel(title: "Portfolia Value", value: "$0.00", percentageChange: 0)
+                stats.append(volume)
+                stats.append(contentsOf: [
+                marketCap,
+                volume,
+                btcDominance,
+                portfolio
+                ])
+                return stats
+            }
     }
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel]{
         guard !text.isEmpty else {
