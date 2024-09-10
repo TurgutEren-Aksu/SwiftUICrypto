@@ -58,6 +58,11 @@ class HomeViewModel: ObservableObject{
                 ])
                 return stats
             }
+            .sink { [weak self] (returnedStats) in
+                self?.statistics = returnedStats
+            }
+            .store(in: &cancellables)
+
     }
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel]{
         guard !text.isEmpty else {
