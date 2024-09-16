@@ -9,7 +9,15 @@ import SwiftUI
 
 struct PortfolioView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView{
+                VStack(alignment: .leading,spacing: 0){
+                    Text("Hi")
+                }
+            }
+            .navigationTitle("Edit Portfolio")
+            .navigationBarItems(leading: Image(systemName: "xmark"))
+        }
     }
 }
 
