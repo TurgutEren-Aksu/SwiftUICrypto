@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PortfolioView: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
             ScrollView{
@@ -16,7 +17,15 @@ struct PortfolioView: View {
                 }
             }
             .navigationTitle("Edit Portfolio")
-            .navigationBarItems(leading: Image(systemName: "xmark"))
+            .navigationBarItems(leading: 
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+               Image(systemName: "xmark")
+                    .font(.headline)
+            })
+                                    
+            )
         }
     }
 }
