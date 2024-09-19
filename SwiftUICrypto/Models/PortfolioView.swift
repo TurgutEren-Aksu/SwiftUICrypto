@@ -17,13 +17,8 @@ struct PortfolioView: View {
                 }
             }
             .navigationTitle("Edit Portfolio")
-            .navigationBarItems(leading: 
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-               Image(systemName: "xmark")
-                    .font(.headline)
-            })
+            .navigationBarItems(leading: XMarkButton()
+            
                                     
             )
         }
