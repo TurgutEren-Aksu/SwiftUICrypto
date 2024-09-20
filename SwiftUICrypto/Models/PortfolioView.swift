@@ -17,10 +17,11 @@ struct PortfolioView: View {
                 }
             }
             .navigationTitle("Edit Portfolio")
-            .navigationBarItems(leading: XMarkButton()
-            
-                                    
-            )
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading){
+                    XMarkButton()
+                }
+            })
         }
     }
 }
