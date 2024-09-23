@@ -19,8 +19,16 @@ struct PortfolioView: View {
                             ForEach(vm.allCoins) { coin in
                                 CoinLogoView(coin: coin)
                                     .frame(width: 75)
+                                    .padding(4)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.theme.green,lineWidth: 1)
+                                        
+                                    )
                             }
                         }
+                        .padding(.vertical,4)
+                        .padding(.leading)
                     }
                 }
             }
