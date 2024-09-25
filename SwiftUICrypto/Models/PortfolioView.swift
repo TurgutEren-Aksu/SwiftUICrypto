@@ -30,6 +30,14 @@ struct PortfolioView: View {
                                 Text("Amount in your portfolio:")
                                 Spacer()
                                 TextField("Ex: 1.4",text: $quantityText)
+                                    .multilineTextAlignment(.trailing)
+                                    .keyboardType(.decimalPad)
+                            }
+                            Divider()
+                            HStack{
+                                Text("Current Value:")
+                                Spacer()
+                                Text("")
                             }
                             
                         }
