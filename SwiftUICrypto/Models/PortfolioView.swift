@@ -28,6 +28,13 @@ struct PortfolioView: View {
                 ToolbarItem(placement: .navigationBarLeading){
                     XMarkButton()
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack(spacing: 10){
+                        Image(systemName: "checkmark")
+                        Text("Save".uppercased())
+                    }
+                    .font(.headline)
+                }
             })
         }
     }
@@ -76,7 +83,7 @@ extension PortfolioView{
             }
             Divider()
             HStack{
-                Text("Amount in your portfolio:")
+                Text("Amount holding:")
                 Spacer()
                 TextField("Ex: 1.4",text: $quantityText)
                     .multilineTextAlignment(.trailing)
