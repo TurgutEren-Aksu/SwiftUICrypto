@@ -30,19 +30,7 @@ struct PortfolioView: View {
                     XMarkButton()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 10){
-                        Image(systemName: "checkmark")
-                            .opacity(showCheckmark ? 1.0 : 0.0)
-                        
-                        Button(action: {
-                            
-                        }, label:{
-                            Text("Save".uppercased())
-                        })
-                        .opacity((selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText)) ? 1.0 : 0.0)
-                        
-                    }
-                    .font(.headline)
+                    trailingNavBarButtons
                 }
             })
         }
@@ -108,6 +96,21 @@ extension PortfolioView{
         }
         .animation(.none)
         .padding()
+        .font(.headline)
+    }
+    private var trailingNavBarButtons: some View{
+        HStack(spacing: 10){
+            Image(systemName: "checkmark")
+                .opacity(showCheckmark ? 1.0 : 0.0)
+            
+            Button(action: {
+                
+            }, label:{
+                Text("Save".uppercased())
+            })
+            .opacity((selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText)) ? 1.0 : 0.0)
+            
+        }
         .font(.headline)
     }
 }
