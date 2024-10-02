@@ -104,7 +104,7 @@ extension PortfolioView{
                 .opacity(showCheckmark ? 1.0 : 0.0)
             
             Button(action: {
-                
+                saveButtonPressed()
             }, label:{
                 Text("Save".uppercased())
             })
@@ -112,5 +112,8 @@ extension PortfolioView{
             
         }
         .font(.headline)
+    }
+    private func saveButtonPressed(){
+        
     }
 }
