@@ -114,6 +114,20 @@ extension PortfolioView{
         .font(.headline)
     }
     private func saveButtonPressed(){
-        
+        guard let coin = selectedCoin else {return}
+        withAnimation(.easeIn) {
+            showCheckmark = true
+            removeSelectedCoin()
+        }
+        UIApplication.shared.endEditing()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+            withAnimation(.easeOut){
+                showCheckmark=false
+            }
+        }
+    }
+    private func removeSelectedCoin(){
+        selectedCoin = nil
+        vm.searchText = ""
     }
 }
