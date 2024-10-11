@@ -35,4 +35,12 @@ class PortfolioDataService{
         entity.coinID = coin.id
         entity.amount = amount
     }
+    
+    private func save(){
+        do{
+            try container.viewContext.save()
+        }catch let error{
+            print(error.localizedDescription)
+        }
+    }
 }
