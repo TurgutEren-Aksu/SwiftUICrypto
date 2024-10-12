@@ -43,4 +43,8 @@ class PortfolioDataService{
             print(error.localizedDescription)
         }
     }
+    private func applyChanges(){
+        save()
+        getPortfolio()
+    }
 }
