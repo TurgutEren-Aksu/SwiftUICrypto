@@ -39,6 +39,10 @@ class PortfolioDataService{
         entity.amount = amount
         applyChanges()
     }
+    private func delete(entity: PortfolioEntity){
+        container.viewContext.delete(entity)
+        applyChanges()
+    }
     
     private func save(){
         do{
