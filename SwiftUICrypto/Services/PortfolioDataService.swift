@@ -35,6 +35,10 @@ class PortfolioDataService{
         entity.coinID = coin.id
         entity.amount = amount
     }
+    private func update(entity: PortfolioEntity,amount: Double){
+        entity.amount = amount
+        applyChanges()
+    }
     
     private func save(){
         do{
