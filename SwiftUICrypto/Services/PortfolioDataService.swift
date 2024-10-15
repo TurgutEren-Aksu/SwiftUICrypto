@@ -20,6 +20,18 @@ class PortfolioDataService{
             if let error = error{
                 print(error.localizedDescription)
             }
+            self.getPortfolio()
+        }
+    }
+    func updatePortfolio(coin: CoinModel, amount: Double){
+        if let entity = savedEntities.first(where: { $0.coinID == coin.id }) {
+            if amount > 0 {
+                update(entity: entity, amount: amount)
+            }else{
+                delete(entity: entity)
+            }
+        }else{
+            add(coin: coin, amount: amount)
         }
     }
     private func getPortfolio(){
